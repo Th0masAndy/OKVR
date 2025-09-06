@@ -70,7 +70,7 @@ void perfBaxos(oc::CLP &cmd)
         vector<block> hashs(decode_key.size());
         vector<vector<u64>> idxs(decode_key.size(), vector<u64>(3 + 1));
 
-        paxos.computeRetrivalIdx<block>(decode_key, hashs, idxs, nt);
+        paxos.computeRetrievalIdx<block>(decode_key, hashs, idxs, nt);
 
         // for (auto &vec : idxs) {
         //     for (auto &u : vec)
@@ -105,7 +105,7 @@ void perfBaxos(oc::CLP &cmd)
 
         std::cout << "total dense size: " << paxos.mNumBins * paxos.mPaxosParam.mDenseSize * sizeof(block) / 1024.0 / 1024.0 << " MB" << std::endl;
 
-        paxos.decodeRetrivalIdx<block>(hashs, idxs, decode_val, pp, nt);
+        paxos.decodeRetrievalIdx<block>(hashs, idxs, decode_val, pp, nt);
     }
 
     if (memcmp(val.data(), decode_val.data(), decode_val.size() * sizeof(block)) != 0)

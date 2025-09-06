@@ -364,10 +364,10 @@ namespace volePSI {
         // values are the output.
         // p is the paxos vector.
         template <typename ValueType>
-        void computeRetrivalIdx(span<const block> inputs, std::vector<ValueType> &values, std::vector<std::vector<u64>> &idx, u64 numThreads);
+        void computeRetrievalIdx(span<const block> inputs, std::vector<ValueType> &values, std::vector<std::vector<u64>> &idx, u64 numThreads);
 
         template <typename ValueType>
-        void decodeRetrivalIdx(
+        void decodeRetrievalIdx(
             std::vector<block> &hashs, std::vector<std::vector<u64>> &rows, std::vector<block> &values, std::vector<std::map<u64, block>> &pp, u64 numThreads);
 
         // decode the given input matrix and write the result to values.

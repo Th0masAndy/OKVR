@@ -2590,7 +2590,7 @@ namespace volePSI {
     }
 
     template <typename ValueType>
-    void Baxos::computeRetrivalIdx(span<const block> inputs, std::vector<ValueType> &values, std::vector<std::vector<u64>> &idx, u64 numThreads)
+    void Baxos::computeRetrievalIdx(span<const block> inputs, std::vector<ValueType> &values, std::vector<std::vector<u64>> &idx, u64 numThreads)
     {
         PxVector<ValueType> V(values);
         auto h = V.defaultHelper();
@@ -2599,7 +2599,7 @@ namespace volePSI {
     }
 
     template <typename ValueType>
-    void Baxos::decodeRetrivalIdx(
+    void Baxos::decodeRetrievalIdx(
         std::vector<block> &hashs, std::vector<std::vector<u64>> &rows, std::vector<block> &values, std::vector<std::map<u64, block>> &pp, u64 numThreads)
     {
         PxVector<ValueType> V(values);
